@@ -29,8 +29,12 @@ To learn more about Next.js, take a look at the following resources:
 
 You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
 
-## Deploy on Vercel
+## Deploy on Vercel (GitHub)
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+1. Sign in at [vercel.com](https://vercel.com) and click **Add New… → Project**.
+2. **Import** the GitHub repository `vemidi-dev/landing-frontend` (install the Vercel GitHub app if prompted).
+3. Leave defaults: **Framework Preset** Next.js, **Root Directory** `./`, **Build Command** `npm run build`, **Output** auto.
+4. Under **Environment Variables**, add the same keys as in [`.env.example`](./.env.example) if you want non-default Sanity project/dataset (optional if you use the built-in defaults).
+5. Click **Deploy**. Every push to `main` will trigger a new production deployment; pull requests get preview URLs.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Official guide: [Next.js on Vercel](https://vercel.com/docs/frameworks/nextjs).

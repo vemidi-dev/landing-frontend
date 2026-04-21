@@ -1,8 +1,12 @@
-import { createClient } from '@sanity/client'
+import { createClient } from "@sanity/client";
+
+const projectId =
+  process.env.NEXT_PUBLIC_SANITY_PROJECT_ID ?? "r1krvsp5";
+const dataset = process.env.NEXT_PUBLIC_SANITY_DATASET ?? "production";
 
 export const client = createClient({
-  projectId: 'r1krvsp5', // от твоя screenshot
-  dataset: 'production', // или "default" ако така си го създал
+  projectId,
+  dataset,
   useCdn: false,
-  apiVersion: '2024-01-01',
-})
+  apiVersion: "2024-01-01",
+});
