@@ -24,3 +24,65 @@ body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+@keyframes heroFloat {
+  0% {
+    transform: translateY(0) scale(1.02);
+  }
+  50% {
+    transform: translateY(-10px) scale(1.05);
+  }
+  100% {
+    transform: translateY(0) scale(1.02);
+  }
+}
+
+.hero-image-float {
+  animation: heroFloat 8s ease-in-out infinite;
+  will-change: transform;
+}
+
+@keyframes heroFadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.hero-card-appear {
+  animation: heroFadeInUp 700ms ease-out both;
+}
+
+.scroll-fade-up {
+  opacity: 0;
+  transform: translateY(18px);
+  transition-property: opacity, transform;
+  transition-duration: 650ms;
+  transition-timing-function: cubic-bezier(0.22, 1, 0.36, 1);
+  will-change: opacity, transform;
+}
+
+.scroll-fade-up.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-image-float {
+    animation: none;
+  }
+
+  .hero-card-appear {
+    animation: none;
+  }
+
+  .scroll-fade-up {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
